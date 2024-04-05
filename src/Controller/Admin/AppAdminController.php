@@ -26,10 +26,6 @@ class AppAdminController extends AppController
             return $this->redirect(['controller' => 'Upgrade', 'action' => 'index'], 307);
         }
 
-        if ($this->redirect_for_license_activate()) {
-            return $this->redirect(['controller' => 'Activation', 'action' => 'index'], 307);
-        }
-
         if ($this->Auth->user()) {
             $this->checkDefaultCampaigns();
         }
